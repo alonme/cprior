@@ -2,7 +2,7 @@ import os
 import platform
 import sys
 
-from setuptools import find_packages, setup, Command
+from setuptools import Command, find_packages, setup
 from setuptools.command.test import test as TestCommand
 
 
@@ -46,6 +46,7 @@ elif system_os == "Darwin":
 else:
     raise RuntimeError("Unexpected system {}.".format(system_os))
 
+# TODO: add avx binary
 # copy compiled libraries
 if system_os == "Windows":
     data_files = [('cprior\\_lib\\', ['cprior\\_lib\\'+cprior])]
